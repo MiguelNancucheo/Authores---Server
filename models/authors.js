@@ -12,6 +12,16 @@ const AuthorsSchema = new cnxmongoose.Schema( {
         minlength: 3, 
         maxlength: 50
     },
+    quotes: [ {
+        quotename: { 
+                 type: String,
+                 minlength: 3, 
+                 maxlength: 50
+               },
+        votes:  { type: Number}
+        }
+    ]
+
 }, { timestamps: true } )
 
 const Author = cnxmongoose.model('Author', AuthorsSchema);

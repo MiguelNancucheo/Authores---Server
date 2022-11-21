@@ -5,17 +5,26 @@ module.exports = function(app) {
         newAuthor,
         getIdAuthor,
         updIdAuthor,
-        delIdAuthor
+        delIdAuthor,
+        newQuoteAuthor,
+        voteQuoteAuthor,
+        delQuoteAuthor
      } = require('../controllers/authors')
 
-    app.get('/auhors', listAuthors) //lista todo
+    app.get('/authors', listAuthors) //lista todo
 
     app.post('/new', newAuthor) // nuevo registro
 
     app.get('/author/:id', getIdAuthor) //entrega por id 
 
-    app.put('/author/:id', updIdAuthor) // actualiza
+    app.put('/author/:id', updIdAuthor) // actualiza autor
 
     app.delete('/author/:id', delIdAuthor) //Borrar por id
+
+    app.put('/newquote/:id', newQuoteAuthor) // nuevo registro cita
+    
+    app.put('/votequote/:id', voteQuoteAuthor) // actualiza votacion
+
+    app.put('/quote/:id', delQuoteAuthor) //Borrar quote 
 
 }
